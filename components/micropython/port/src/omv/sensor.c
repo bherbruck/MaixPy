@@ -74,6 +74,7 @@ const int resolution[][2] = {
     {800,  600 },    /* SVGA      */
     {1280, 1024},    /* SXGA      */
     {1600, 1200},    /* UXGA      */
+    {224,  224 },    /* MBNET     */
 };
 
 void _ndelay(uint32_t ns)
@@ -781,9 +782,9 @@ int sensor_set_windowing(int x, int y, int w, int h)
     MAIN_FB()->y = y;
     MAIN_FB()->w = MAIN_FB()->u = w;
     MAIN_FB()->h = MAIN_FB()->v = h;
-	dvp_set_image_size(w, h);	//set QVGA default
-	dvp_set_ai_addr((uint32_t)MAIN_FB()->pix_ai, (uint32_t)(MAIN_FB()->pix_ai + MAIN_FB()->w * MAIN_FB()->h), (uint32_t)(MAIN_FB()->pix_ai + MAIN_FB()->w * MAIN_FB()->h * 2));
-    return 0;
+    //dvp_set_image_size(w, h);	//set QVGA default
+	//dvp_set_ai_addr((uint32_t)MAIN_FB()->pix_ai, (uint32_t)(MAIN_FB()->pix_ai + MAIN_FB()->w * MAIN_FB()->h), (uint32_t)(MAIN_FB()->pix_ai + MAIN_FB()->w * MAIN_FB()->h * 2));
+	return 0;
 }
 
 int sensor_set_contrast(int level)
