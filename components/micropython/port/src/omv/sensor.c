@@ -782,8 +782,8 @@ int sensor_set_windowing(int x, int y, int w, int h)
     MAIN_FB()->y = y;
     MAIN_FB()->w = MAIN_FB()->u = w;
     MAIN_FB()->h = MAIN_FB()->v = h;
-    //dvp_set_image_size(w, h);	//set QVGA default
-	//dvp_set_ai_addr((uint32_t)MAIN_FB()->pix_ai, (uint32_t)(MAIN_FB()->pix_ai + MAIN_FB()->w * MAIN_FB()->h), (uint32_t)(MAIN_FB()->pix_ai + MAIN_FB()->w * MAIN_FB()->h * 2));
+    dvp_set_image_size(w, h);	//set QVGA default
+	dvp_set_ai_addr((uint32_t)MAIN_FB()->pix_ai, (uint32_t)(MAIN_FB()->pix_ai + MAIN_FB()->w * MAIN_FB()->h), (uint32_t)(MAIN_FB()->pix_ai + MAIN_FB()->w * MAIN_FB()->h * 2));
 	return 0;
 }
 
